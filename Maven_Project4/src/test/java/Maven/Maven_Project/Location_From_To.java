@@ -12,7 +12,9 @@ import org.apache.poi.ss.usermodel.DateUtil;
 import org.bouncycastle.asn1.dvcs.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,7 +23,7 @@ import Page_Object.Landing_Page;
 import resources.base;
 
 @Test
-public class Trip_Booking extends base {
+public class Location_From_To extends base {
 
 	@BeforeTest
 	public void initailize() throws IOException {
@@ -75,37 +77,7 @@ public class Trip_Booking extends base {
 		
 }
 
-	@Test(priority=3)
-	public void Date() throws IOException, InterruptedException {
-		
-		Landing_Page l= new Landing_Page(driver);
-		l.Depart_Date().click();
-		List<WebElement> monthlist= driver.findElements(By.xpath("//*[@id='monthWrapper']/div/div/div[@class='day-container']/table/tbody/tr/td"));
-		
-		String Active_month= l.Active_month().getText();		
-		
-		if(Active_month.equalsIgnoreCase("December' 22")){
-			
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript(Active_month, null);
-			
-			System.out.println("Success");
-			
-			for(WebElement orgdate: monthlist) {
-				
-			String t_date= orgdate.getText();
-			
-			System.out.println(t_date);
-			
-				if(t_date.contains("25")) {
-					 
-					orgdate.click();
-					
-				break;
-		
-				} 
-			}}
-}	}		
+		}		
 //		((JavascriptExecutor) driver).executeScript("arguments[0].scrollBy(0, 500)", l.ScrollTo());
 //		boolean d_month= driver.findElement(By.xpath("//div[@class='active-month-holder']")).getText().equalsIgnoreCase("August' 21");
 //		 ((JavascriptExecutor) driver).executeScript("window.scrollIntoView()",d_month);

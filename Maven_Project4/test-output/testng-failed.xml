@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Maven.Maven_Project.Trip_Booking">
+      <class name="Maven.Maven_Project.Select_Departure_date">
         <methods>
           <include name="Date"/>
           <include name="initailize"/>
         </methods>
-      </class> <!-- Maven.Maven_Project.Trip_Booking -->
+      </class> <!-- Maven.Maven_Project.Select_Departure_date -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
